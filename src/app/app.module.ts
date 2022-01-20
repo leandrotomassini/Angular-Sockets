@@ -13,7 +13,6 @@ const config: SocketIoConfig = {
   options: {} 
 };
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -18,4 +18,10 @@ export class ChatService {
     this.wsService.emit('mensaje', payload);
 
   }
+
+  getMessages(){
+    return this.wsService.listen('mensaje-nuevo');
+  }
+
+
 }

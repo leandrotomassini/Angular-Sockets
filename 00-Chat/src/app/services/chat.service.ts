@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { WebsocketService } from './websocket.service';
 
 @Injectable({
@@ -6,7 +7,9 @@ import { WebsocketService } from './websocket.service';
 })
 export class ChatService {
 
-  constructor(public wsService: WebsocketService) { }
+  constructor(
+    public wsService: WebsocketService
+  ) { }
 
   sendMessage(mensaje: string) {
 
@@ -19,9 +22,7 @@ export class ChatService {
 
   }
 
-  getMessages(){
+  getMessages() {
     return this.wsService.listen('mensaje-nuevo');
   }
-
-
 }

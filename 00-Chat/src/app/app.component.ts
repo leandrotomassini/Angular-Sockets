@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { WebsocketService } from './services/websocket.service';
 
 @Component({
@@ -8,9 +9,6 @@ import { WebsocketService } from './services/websocket.service';
 })
 export class AppComponent {
 
-  constructor(
-    public wsService: WebsocketService
-  ) {}
-
+  constructor(public wsService: WebsocketService) { }
 
 }

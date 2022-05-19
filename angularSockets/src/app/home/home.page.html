@@ -7,27 +7,38 @@
     <ion-title *ngIf="!webSocketService.socketStatus" color="danger" slot="end">Desconectado del servidor</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
 
-<ion-content [fullscreen]="true" id="chat-mensajes">
+  <ion-grid fixed>
+    <ion-row *ngFor="let msg of mensajes">
 
-  <ion-item *ngFor="let msg of mensajes" class="list-group-item">
-    <ion-label>{{msg.de}}: {{msg.cuerpo}}</ion-label>
-  </ion-item>
+      <ion-col offset="3" size="9"  class="message my-message">
+        <b>{{ msg.de }} </b>
+        <span>{{ msg.cuerpo}}</span>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar class="ion-text-center">
+  <ion-toolbar color="light">
     <form (ngSubmit)="enviar()">
-      <ion-item>
-        <ion-input [(ngModel)]="texto" name="mensajeInput" placeholder="Escribe tu mensaje aquí" type="text"
-          autofocus="true" autocomplete="off"></ion-input>
-        <ion-button type="submit" width="150px" class="boton-enviar" color="light" size="4">
-          <ion-icon name="send-outline" color="primary"></ion-icon>
-        </ion-button>
-      </ion-item>
+      <ion-row align-items-center no-padding>
+        <ion-col size="10">
+          <ion-input [(ngModel)]="texto" name="mensajeInput" placeholder="Escribe tu mensaje aquí" type="text"
+            autofocus="true" autocomplete="off" class="message-input"></ion-input>
+        </ion-col>
+        <ion-col size="2">
 
+          <ion-button type="submit" expand="block" fill="clear" color="primary" class="msg-btn">
+            <ion-icon name="send-outline"></ion-icon>
+          </ion-button>
 
+        </ion-col>
+      </ion-row>
     </form>
   </ion-toolbar>
 </ion-footer>
+

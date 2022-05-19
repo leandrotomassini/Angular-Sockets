@@ -8,13 +8,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" id="chat-mensajes">
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Pokémon Yellow</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-item *ngFor="let msg of mensajes" class="list-group-item">
+    <ion-label>{{msg.de}}: {{msg.cuerpo}}</ion-label>
+  </ion-item>
 
 </ion-content>
 
@@ -23,8 +21,10 @@
     <form (ngSubmit)="enviar()">
       <ion-item>
         <ion-input [(ngModel)]="texto" name="mensajeInput" placeholder="Escribe tu mensaje aquí" type="text"
-          autofocus="true" autocomplete="off" ></ion-input>
-          <ion-icon name="send-outline" ></ion-icon>
+          autofocus="true" autocomplete="off"></ion-input>
+        <ion-button type="submit" width="150px" class="boton-enviar" color="light" size="4">
+          <ion-icon name="send-outline" color="primary"></ion-icon>
+        </ion-button>
       </ion-item>
 
 

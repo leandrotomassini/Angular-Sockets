@@ -26,3 +26,14 @@
   text-decoration: none;
 }
 
+.boton-enviar {
+  --box-shadow: none;
+}
+
+#chat-mensajes {
+  border: 1px solid gray;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+

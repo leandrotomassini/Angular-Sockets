@@ -3,6 +3,7 @@
     <ion-title>Messenger</ion-title>
     <ion-label slot="end" color="primary" *ngIf="wsService.socketStatus">Conectado</ion-label>
     <ion-label slot="end" color="danger" *ngIf="!wsService.socketStatus">Desconectado</ion-label>
+    <ion-label slot="end" color="primary" class="salir" (click)="salir()"><ion-icon name="log-out-outline"></ion-icon></ion-label>
   </ion-toolbar>
 </ion-header>
 
@@ -24,7 +25,7 @@
       </ion-col>
 
       <ion-col size="6">
-        <app-chat></app-chat>
+        <app-chat [nombreUsuario]="wsService.usuario.nombre"></app-chat>
       </ion-col>
 
     </ion-row>

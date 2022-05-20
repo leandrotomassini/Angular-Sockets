@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 
@@ -13,6 +13,7 @@ import { WebsocketService } from '../../services/websocket.service';
 export class ChatComponent implements OnInit {
 
   @ViewChild(IonContent) content: IonContent
+  @Input() nombreUsuario = '';
 
   texto = '';
   mensajesSubscription: Subscription;
@@ -29,9 +30,7 @@ export class ChatComponent implements OnInit {
     }, 200);
 
     this.mensajesSubscription = this.chatService.getMessages().subscribe(msg => {
-
       this.mensajes.push(msg);
-
     });
   }
 
@@ -40,6 +39,7 @@ export class ChatComponent implements OnInit {
   }
 
   enviar() {
+
     if (this.texto.trim().length === 0) {
       return;
     }

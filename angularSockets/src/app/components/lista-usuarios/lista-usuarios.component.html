@@ -1,3 +1,20 @@
-<p>
-  lista-usuarios works!
-</p>
+<ion-list>
+
+  <ion-list-header> Usuarios </ion-list-header>
+
+  <ion-item *ngFor="let usuario of usuariosActivosObs | async">
+    
+    <ion-avatar slot="start">
+      <img src="../../../assets/avatar.jpg"/>
+    </ion-avatar>
+
+    <ion-label>
+      <h2>{{ usuario.nombre}}</h2>
+      <h3>{{ usuario.sala}}</h3>
+      <p>{{ usuario.id}}</p>
+    </ion-label>
+
+  </ion-item>
+
+
+</ion-list>

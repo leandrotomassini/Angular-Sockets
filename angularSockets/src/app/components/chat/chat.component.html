@@ -1,10 +1,14 @@
 <ion-content>
-
   <ion-grid fixed>
     <ion-row *ngFor="let msg of mensajes">
 
-      <ion-col offset="3" size="9"  class="message my-message">
-        <b>{{ msg.de }} </b>
+      <ion-col size="9"  *ngIf=" msg.de !== nombreUsuario" class="message other-message">
+        <b>{{ msg.de }}: </b>
+        <span>{{ msg.cuerpo}}</span>
+      </ion-col>
+
+      <ion-col offset="3" size="9"  *ngIf=" msg.de === nombreUsuario" class="message my-message">
+        <b>{{ msg.de }}: </b>
         <span>{{ msg.cuerpo}}</span>
       </ion-col>
 

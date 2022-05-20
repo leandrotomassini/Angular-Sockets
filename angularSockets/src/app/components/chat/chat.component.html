@@ -1,12 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Chat
-    </ion-title>
-    <ion-title *ngIf="webSocketService.socketStatus" color="primary" slot="end">Conectado al servidor</ion-title>
-    <ion-title *ngIf="!webSocketService.socketStatus" color="danger" slot="end">Desconectado del servidor</ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
 
   <ion-grid fixed>
@@ -41,4 +32,3 @@
     </form>
   </ion-toolbar>
 </ion-footer>
-

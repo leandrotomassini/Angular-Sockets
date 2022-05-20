@@ -2,15 +2,15 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 
-import { ChatService } from '../services/chat.service';
-import { WebsocketService } from '../services/websocket.service';
+import { ChatService } from '../../services/chat.service';
+import { WebsocketService } from '../../services/websocket.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.scss'],
 })
-export class HomePage implements OnInit, OnDestroy {
+export class ChatComponent implements OnInit {
 
   @ViewChild(IonContent) content: IonContent
 

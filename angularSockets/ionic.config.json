@@ -1,7 +1,0 @@
-{
-  "name": "angularSockets",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

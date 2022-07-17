@@ -14,7 +14,6 @@ export class WebsocketService {
   }
 
   checkStatus() {
-
     this.socket.on('connect', () => {
       console.log(`Conectado al servidor.`);
       this.socketStatus = true;
@@ -24,6 +23,15 @@ export class WebsocketService {
       console.log(`Desconectado del servidor.`);
       this.socketStatus = false;
     });
+  }
+
+  emit(evento: string, payload?: any, callback?: Function) {
+    console.log('Emitiendo desde Angular: ', evento);
+    this.socket.emit(evento, payload, callback);
+  }
+
+  listen(evento: string) {
+    return this.socket.fromEvent(evento);
   }
 
 }

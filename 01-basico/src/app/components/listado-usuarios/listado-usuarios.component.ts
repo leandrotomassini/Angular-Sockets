@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
   selector: 'app-listado-usuarios',
@@ -7,8 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoUsuariosComponent implements OnInit {
 
-  constructor() { }
+  usuariosActivosObs: Observable<any>;
 
-  ngOnInit() {}
+  constructor(public chatService: ChatService) { }
+
+  ngOnInit() {
+    this.usuariosActivosObs = this.chatService.getUsuariosActivos();
+    this.chatService.emitirUsuariosActivos();
+  }
+
 
 }

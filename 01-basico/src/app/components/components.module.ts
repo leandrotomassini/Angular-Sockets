@@ -17,7 +17,8 @@ import { ListadoUsuariosComponent } from './listado-usuarios/listado-usuarios.co
   ],
   exports:[
     HeaderComponent,
-    MensajesComponent
+    MensajesComponent,
+    ListadoUsuariosComponent
   ],
   imports: [
     CommonModule,

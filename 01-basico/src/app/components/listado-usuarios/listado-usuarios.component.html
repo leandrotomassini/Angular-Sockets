@@ -1,3 +1,8 @@
-<p>
-  listado-usuarios works!
-</p>
+<ion-list>
+  <ion-list-header>
+    <ion-title>Usuarios activos</ion-title>
+  </ion-list-header>
+  <ion-item *ngFor="let usuario of usuariosActivosObs | async">
+    {{ usuario.nombre }} - {{ usuario.sala }} - {{ usuario.id }}
+  </ion-item>
+</ion-list>

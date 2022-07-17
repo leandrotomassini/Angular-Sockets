@@ -13,4 +13,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
+  salir(){
+    this.wsService.logoutWS();
+  }
+
 }

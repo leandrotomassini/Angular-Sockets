@@ -3,7 +3,7 @@
     <ion-title>
       Sockets
     </ion-title>
-    <ion-label *ngIf="wsService.socketStatus" color="secondary" slot="end" class="aviso-conexion">Conectado</ion-label>
+    <ion-label *ngIf="wsService.socketStatus" color="secondary" slot="end" class="aviso-conexion">Conectado como {{wsService.usuario.nombre}}</ion-label>
     <ion-label *ngIf="!wsService.socketStatus" color="danger" slot="end" class="aviso-conexion">Desconectado</ion-label>
   </ion-toolbar>
 </ion-header>

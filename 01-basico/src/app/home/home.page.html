@@ -1,19 +1,38 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngIf="mensajes.length > 0">
-    <ion-list>
-      <ion-item *ngFor="let mensaje of mensajes">
-        <ion-label>{{ mensaje.de }}: {{mensaje.cuerpo}}</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-card>
-</ion-content>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" >
+
+          <ion-card *ngIf="mensajes.length > 0">
+            <ion-list>
+              <ion-item *ngFor="let mensaje of mensajes">
+                <ion-label>{{ mensaje.de }}: {{mensaje.cuerpo}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card>
+
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card class="usuarios">
+          <ion-list>
+            <ion-item>
+              <ion-label>Usuario 1</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
 <ion-footer>
   <ion-toolbar>
     <form (ngSubmit)="enviar()">
-      <ion-input type="text" placeholder="Escriba su mensaje..." slot="start" [(ngModel)]="texto" name="texto">
+      <ion-input type="text" placeholder="Escriba su mensaje..." slot="start" [(ngModel)]="texto"
+        name="texto">
       </ion-input>
     </form>
   </ion-toolbar>

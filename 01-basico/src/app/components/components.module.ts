@@ -3,16 +3,21 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 import { HeaderComponent } from './header/header.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
+import { ListadoUsuariosComponent } from './listado-usuarios/listado-usuarios.component';
 
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    MensajesComponent,
+    ListadoUsuariosComponent
   ],
   exports:[
-    HeaderComponent
+    HeaderComponent,
+    MensajesComponent
   ],
   imports: [
     CommonModule,

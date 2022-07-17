@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="10">
+        <ion-card class="ion-padding">
+          <form (ngSubmit)="entrar()">
+            <ion-input type="text" placeholder="Escribe un nombre" [(ngModel)]="nombre" name="nombre"></ion-input>
+            <ion-button type="submit">
+              Entrar
+            </ion-button>
+          </form>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>

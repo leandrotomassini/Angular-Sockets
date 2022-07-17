@@ -15,7 +15,10 @@ export class HomePage implements OnInit, OnDestroy {
   mensajesSubscription: Subscription;
   mensajes: any[] = [];
 
-  constructor(public wsService: WebsocketService, public chatService: ChatService) { }
+  constructor(
+    public wsService: WebsocketService,
+    public chatService: ChatService
+  ) { }
 
   ngOnInit(): void {
     this.mensajesSubscription = this.chatService.getMessages().subscribe(msg => {
